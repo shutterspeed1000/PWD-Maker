@@ -15,6 +15,44 @@ var usespecialChr = prompt("Use special characters?- Yes or No")
 var useupperChr = prompt("Use upper case letters?-- Yes or No")
 var uselowerChr = prompt("Use lower case letters?-- Yes or No")
 var useNumeric = prompt("Use numbers?-- Yes or No")
+var pwdCharSet = ""
+
+
+// if statments to build characters sets in var pwdCharset used.  Each option will skip or add to the character set.
+if (usespecialChr === "Yes" || "yes" || "y" || "Y") {
+  var pwdCharSet = pwdCharSet + specialChr
+}
+
+if (useupperChr == "Yes" || "yes" || "y" || "Y") {
+  var pwdCharSet = pwdCharSet + upperChr
+}
+
+if (useNumeric == "Yes" || "yes" || "y" || "Y") {
+  var pwdCharSet = pwdCharSet + numeric
+}
+
+if (uselowerChr == "Yes" || "yes" || "y" || "Y") {
+  var pwdCharSet = pwdCharSet + lowerChr
+}
+
+// {
+
+//   alert("You must select at least one character type, lowecase will be used by default.")
+//   var pwdCharSet = pwdCharSet + lowerChr
+// }
+
+
+
+
+
+
+console.log('Characters uses ' + pwdCharSet);
+
+
+
+
+
+
 
 
 
