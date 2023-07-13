@@ -4,50 +4,68 @@
 //var specialChr = "!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 const specialChr = "!@@$"
 const upperChr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-const  lowerChr = "abcdefghijklmnopqrstuvwxyz"
+const lowerChr = "abcdefghijklmnopqrstuvwxyz"
 const numeric = "0123456789"
 
 
 
 // prompt user for password lenght and character types
 var pwdLength = prompt("Password length?")
+
+//Function to create character sets
+function pwdParameters(){
 var usespecialChr = prompt("Use special characters?- Yes or No")
 var useupperChr = prompt("Use upper case letters?-- Yes or No")
 var uselowerChr = prompt("Use lower case letters?-- Yes or No")
 var useNumeric = prompt("Use numbers?-- Yes or No")
 var pwdCharSet = ""
 
-
 // if statments to build characters sets in var pwdCharset used.  Each option will skip or add to the character set.
-if (usespecialChr === "Yes" || "yes" || "y" || "Y") {
+if (usespecialChr == "Yes" || usespecialChr == "yes" || usespecialChr == "y" || usespecialChr == "Y") {
   var pwdCharSet = pwdCharSet + specialChr
 }
 
-if (useupperChr == "Yes" || "yes" || "y" || "Y") {
+if (useupperChr === "Yes" || useupperChr === "yes" || useupperChr === "y" || useupperChr === "Y") {
   var pwdCharSet = pwdCharSet + upperChr
 }
 
-if (useNumeric == "Yes" || "yes" || "y" || "Y") {
+if (useNumeric === "Yes" || useNumeric === "yes" || useNumeric === "y" || useNumeric === "Y") {
   var pwdCharSet = pwdCharSet + numeric
 }
 
-if (uselowerChr == "Yes" || "yes" || "y" || "Y") {
+if (uselowerChr === "Yes" || uselowerChr === "yes" || uselowerChr === "y" || uselowerChr === "Y") {
   var pwdCharSet = pwdCharSet + lowerChr
 }
 
-// {
+return pwdCharSet
 
-//   alert("You must select at least one character type, lowecase will be used by default.")
-//   var pwdCharSet = pwdCharSet + lowerChr
-// }
+}
+
+pwdcharacters = pwdParameters()
+
+//Verify inputs were made and retry if needed
+if (pwdcharacters === "" )
+{
+  alert("You must select one character type, please try again")
+  pwdParameters()
+}
 
 
 
 
 
 
-console.log('Characters uses ' + pwdCharSet);
 
+
+
+
+console.log('Characters uses ' + pwdcharacters);
+
+
+
+//build loop for select letters from var based on lenght.
+
+// lowerChr.forEach(letter);
 
 
 
