@@ -1,5 +1,28 @@
 // Assignment code here
 
+
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+
+function writePassword() {
+
+  console.log("botton pushed")
+  // var password = generatePassword();
+  // var passwordText = document.querySelector("#password");
+
+  // passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
 //Character Sets
 //var specialChr = "!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 const specialChr = "!@@$"
@@ -8,12 +31,17 @@ const lowerChr = "abcdefghijklmnopqrstuvwxyz"
 const numeric = "0123456789"
 
 
+//Function to collect password lenght - returns number of characters
+  function pwdLengthCollect()
+  {
+    var pwdLength = prompt("Password length?")
+    return pwdLength
 
-// prompt user for password lenght and character types
-var pwdLength = prompt("Password length?")
+    }
 
-//Function to create character sets
-function pwdParameters(){
+//Function to create character sets - returns character set to use
+function pwdCharSetBuild()
+{
 var usespecialChr = prompt("Use special characters?- Yes or No")
 var useupperChr = prompt("Use upper case letters?-- Yes or No")
 var uselowerChr = prompt("Use lower case letters?-- Yes or No")
@@ -41,25 +69,32 @@ return pwdCharSet
 
 }
 
-pwdcharacters = pwdParameters()
 
-//Verify inputs were made and retry if needed
-if (pwdcharacters === "" )
-{
-  alert("You must select one character type, please try again")
-  pwdParameters()
+// console.log('Characters uses ' + pwCharacters);
+
+//build passwords from pwdCharSet and pwdLenght
+
+function buildPWD() {
+
+  var lenght = pwdLengthCollect();
+  var characters = pwdCharSetBuild();
+
+  var pwd = ""
+  for (var i = 0; i < lenght; i++) {
+    pwd += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  
+
+console.log('Characters uses ' + characters);
+console.log(pwd);
+
+return pwd;
 }
 
+buildPWD();
 
 
 
-
-
-
-
-
-
-console.log('Characters uses ' + pwdcharacters);
 
 
 
@@ -75,19 +110,19 @@ console.log('Characters uses ' + pwdcharacters);
 
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
 
 
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+//   passwordText.value = password;
 
-}
+// }
 
 
 // // quick way
@@ -100,8 +135,7 @@ function writePassword() {
 // }
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
 
 
 // GIVEN I need a new, secure password
