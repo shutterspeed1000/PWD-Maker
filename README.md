@@ -53,6 +53,7 @@ Technology used based on class materal:
 - Loop statments
 - Functions
 - Constants
+- charAt method
 
 ## Link to live site
 
