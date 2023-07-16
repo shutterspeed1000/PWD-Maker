@@ -24,7 +24,7 @@ function pwdLengthCollect() {
   var pwdLength = prompt("Password length(greater than 7)?")
 
 
-  if (pwdLength < 8 || pwdLength > 128 && lengthRetry <= 4) {
+  if (pwdLength < 8 && lengthRetry <=4 || pwdLength > 128 && lengthRetry <= 4) {
     lengthRetry++
     pwdLengthCollect()
   }
