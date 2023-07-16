@@ -8,9 +8,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = buildPWD();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
@@ -23,10 +21,10 @@ var charRetry = 1
 
 //Function to collect password lenght - returns number of characters - retry if not entered correctly
 function pwdLengthCollect() {
-  var pwdLength = prompt("Password length(greater than 8)?")
+  var pwdLength = prompt("Password length(greater than 7)?")
 
 
-  if (pwdLength < 8 && lengthRetry <= 4) {
+  if (pwdLength < 8 || pwdLength > 128 && lengthRetry <= 4) {
     lengthRetry++
     pwdLengthCollect()
   }
@@ -46,8 +44,7 @@ function pwdLengthCollect() {
 function pwdCharSetBuild() {
 
   //Character Sets
-  //var specialChr = "!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-  const specialChr = "!@@$"
+  const specialChr = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
   const upperChr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   const lowerChr = "abcdefghijklmnopqrstuvwxyz"
   const numeric = "0123456789"
