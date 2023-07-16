@@ -64,8 +64,7 @@ Technology used based on class materal:
 
 ## Credits
 
-Starter code from https://github.com/coding-boot-camp/friendly-parakeet
-
+Starter code from <https://github.com/coding-boot-camp/friendly-parakeet>
 
 ## License
 
