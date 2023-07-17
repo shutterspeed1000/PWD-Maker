@@ -1,6 +1,5 @@
 // Assignment code here
 
-
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -23,8 +22,8 @@ var charRetry = 1
 function pwdLengthCollect() {
   var pwdLength = prompt("Password length(greater than 7)?")
 
-//Verify input was valid
-  if (pwdLength < 8 && lengthRetry <=4 || pwdLength > 128 && lengthRetry <= 4) {
+  //Verify input was valid
+  if (pwdLength < 8 && lengthRetry <= 4 || pwdLength > 128 && lengthRetry <= 4) {
     lengthRetry++
     pwdLengthCollect()
   }
@@ -37,8 +36,6 @@ function pwdLengthCollect() {
   return pwdLength
 
 }
-
-
 
 //Function to create character sets - returns character set to use - retry if not entered correctly
 function pwdCharSetBuild() {
@@ -54,7 +51,7 @@ function pwdCharSetBuild() {
   var uselowerChr = confirm("Use lower case letters?-- Yes(OK) or No(Cancel)")
   var useNumeric = confirm("Use numbers?-- Yes(OK) or No(Cancel)")
   var pwdCharSet = ""
-  
+
 
   // if statments to build characters sets in var pwdCharset used.  Each option will skip or add to the character set.
   if (usespecialChr === true) {
