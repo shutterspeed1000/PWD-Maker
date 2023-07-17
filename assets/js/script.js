@@ -30,7 +30,7 @@ function pwdLengthCollect() {
   if (lengthRetry > 4) {
     lengthRetry = 0
     alert("You have exceeded the number of retries, reload the page.")
-    return
+    Process.exit()
   }
 
   return pwdLength
@@ -80,7 +80,7 @@ function pwdCharSetBuild() {
   if (charRetry > 4) {
     charRetry = 0
     alert("You have exceeded the number of retries, reload the page.")
-    return
+    Process.exit()
   }
 
   return pwdCharSet
